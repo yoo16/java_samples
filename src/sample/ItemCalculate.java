@@ -3,39 +3,7 @@ package sample;
 public class ItemCalculate {
 
 	public static void main(String[] args) {
-		String itemName;
-		int price;
-		int amount;
-		boolean is_sale;
-
-		// type error
-		// string itemName;
-
-		// itemName = コーヒー;
-		itemName = "コーヒー";
-		price = 120;
-		amount = 5;
-		is_sale = true;
-		// amount = 0.1f;
-
-		System.out.println(itemName);
-		System.out.println(price);
-		System.out.println(amount);
-		System.out.println(is_sale);
-		System.out.println(itemName + "の価格は" + price + "円です");
-
-		final float TAX_RATE = 0.1f;
-		// TAX_RATE = 0.8f;
-
-		// final Float TAX_RATE = 0.1f;
-		System.out.println(TAX_RATE);
-
-		//cast
-		price = 200;
-		float pointRate = 0.05f;
-		float point = (float) price * pointRate;
-		System.out.println((int) point + "pt");
-
+		// calculate
 		int answer = 1 + 2;
 		answer = answer + 3;
 		answer = answer - 2;
@@ -48,6 +16,14 @@ public class ItemCalculate {
 		System.out.println("余りは" + mod);
 
 		// cast
+		int price = 200;
+		float pointRate = 0.05f;
+		// price を float にキャスト
+		float point = (float) price * pointRate;
+		// point を int にキャスト
+		System.out.println((int) point + "pt");
+
+		String itemName = "コーヒー";
 		String message = itemName + "の価格は" + price + "円です。";
 		System.out.println(message);
 
@@ -55,8 +31,8 @@ public class ItemCalculate {
 		answer = 4 / 3;
 		System.out.println(answer);
 
-		//単項演算
-		amount = 5;
+		// 単項演算
+		int amount = 5;
 		// amount に 1 足した結果を amount に代入
 		amount++;
 		System.out.println(amount);
@@ -71,7 +47,6 @@ public class ItemCalculate {
 		amount = 10;
 		System.out.println(++amount + ++amount);
 
-		
 		// 複合演算
 		price = 110;
 		amount = 3;
@@ -84,6 +59,16 @@ public class ItemCalculate {
 		message = itemName + "の価格は" + price + "円です。";
 		message += "購入しますか？";
 		System.out.println(message);
+
+		// 演習
+		// 1
+		int hp = 5;
+		hp++;
+		hp -= 4;
+		hp *= 4;
+		hp /= 2;
+
+		System.out.println("HPは" + hp);
 
 		// 論理演算
 		price = 100;
@@ -127,13 +112,6 @@ public class ItemCalculate {
 		is_match = (Integer.parseInt(str1) == number1);
 		System.out.println(is_match);
 
-		int hp = 5;
-		hp++;
-		hp -= 4;
-		hp *= 4;
-		hp /= 2;
-		System.out.println(hp);
-
 		// オーバーフロー
 		price = 100000;
 		amount = 100000;
@@ -141,10 +119,10 @@ public class ItemCalculate {
 		System.out.println(total_price);
 
 		// zero div
-//		price = 100;
-//		amount = 0;
-//		float average = price / amount;
-//		System.out.println(average);
+		// price = 100;
+		// amount = 0;
+		// float average = price / amount;
+		// System.out.println(average);
 
 		//
 		price = 150;
@@ -153,13 +131,33 @@ public class ItemCalculate {
 		System.out.println(message);
 
 		// 演習
-		String name = "Tokyo";
-		int character_hp = 10;
-		int damage = 10;
-		String battle_message = (character_hp > damage) ? "のこうげき！" : "はたおれた！";
-		String game_message = name + battle_message;
+		// 1
+		System.out.println("問題1");
+		int temperature = 30;
+		boolean is_hot = (temperature > 30);
+		boolean is_cold = (temperature < 10);
 
-		System.out.println(game_message);
+		System.out.println(is_hot);
+		System.out.println(is_cold);
+
+		// 2
+		// コンパイルエラー
+		// float value1 = 20.f;
+		// String value2 = "20";
+		// boolean is_equal = (value1 == value2);
+		// System.out.println(is_match);
+
+		// 3
+		System.out.println("問題3");
+		String character_name = "Tokyo";
+		String monster_name = "スライム";
+		int character_hp = 20;
+		int monster_hp = 5;
+		int damage = 10;
+		String battle_message = character_name + "のこうげき！";
+		String attack_message = (monster_hp > damage) ? "に" + damage + "のダメージ" : "はたおれた！";
+		battle_message += monster_name + attack_message;
+		System.out.println(battle_message);
 	}
 
 }
