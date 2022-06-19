@@ -1,4 +1,4 @@
-package sample;
+package shop.item;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -7,13 +7,21 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-public class ItemCollection {
+public class ItemList {
 
 	public static void main(String[] args) {
 		//List
-		List<String> drinks = Arrays.asList("コーヒー", "紅茶", "ほうじ茶");
-		System.out.println(drinks);
+		List<Drink> drinks = Arrays.asList(
+				new Drink("コーヒー", 350, 10),
+				new Drink("紅茶", 350, 10),
+				new Drink("ほうじ茶", 350, 10));
 		
+		for (Drink drink : drinks) {
+			System.out.println(drink.name);
+			System.out.println(drink.price);
+			System.out.println(drink.stock);
+		}
+
 		// ArrayList
 		ArrayList<String> drinkList = new ArrayList<>(Arrays.asList("コーヒー", "紅茶", "ほうじ茶"));
 		String selectListDrink = drinkList.get(1);

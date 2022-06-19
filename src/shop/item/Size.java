@@ -1,4 +1,4 @@
-package item;
+package shop.item;
 
 public enum Size {
 	LARGE("L"), MEDIUM("M"), SMALL("S");

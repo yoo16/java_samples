@@ -3,7 +3,6 @@ package sample;
 import java.util.Random;
 
 public class ItemRepeat {
-
 	public static void main(String[] args) {
 		//for
 		for (int i = 0; i <= 10; i++) {
@@ -24,28 +23,37 @@ public class ItemRepeat {
 			String drink = drinks[i];
 			System.out.println(drink);
 		}
-		
+
 		//問題1
 		int sum = 0;
-		for (int i = 1; i <= 1000; i++) {
+		int max = 1000;
+		for (int i = 1; i <= max; i++) {
+			sum += i;
+		}
+		System.out.println("合計：" + sum);
+		
+		sum = 0;
+		max = 3000;
+		for (int i = 1; i <= max; i++) {
 			sum += i;
 		}
 		System.out.println(sum);
-		
+		System.out.println("1-3000合計：" + sum);
+
 		//問題2
 		for (int x = 1; x <= 9; x++) {
 			for (int y = 1; y <= 9; y++) {
 				int answer = x * y;
-				
+
 				System.out.print(answer + " ");
 			}
 			System.out.println();
-		}		
-		
+		}
+
 		//問題3
-	    Random rand = new Random();
-	    String[] marks = { "○", "●" };
-	   
+		Random rand = new Random();
+		String[] marks = { "○", "●" };
+
 		for (int x = 1; x <= 5; x++) {
 			for (int y = 1; y <= 5; y++) {
 				int markIndex = rand.nextInt(marks.length);
@@ -61,35 +69,46 @@ public class ItemRepeat {
 		while (i <= 10) {
 			i++;
 		}
-		System.out.println(i);
-		
+		System.out.println("whileの結果：" + i);
+
 		//break
-		i = 0;
-		while (i <= 10) {
-		    System.out.println(i);
-		    break;
+		int currentNumber = 1;
+		int maxNumber = 1000;
+		int limit = 0;
+		while (currentNumber < maxNumber) {
+			if (currentNumber % 7 == 0) {
+				System.out.println(currentNumber);
+				limit++;
+			}
+			if (limit == 5) {
+				break;
+			}
+			currentNumber++;
 		}
-		System.out.println(i);
-		
+
 		//do while
 		i = 0;
 		do {
-		    i++;
+			i++;
 		} while (i <= 10);
 		System.out.println(i);
 
+		//while
 		//問題1
 		int count = 0;
 		int number = 1;
 		int multiple = 17;
 		while (number < 1000) {
-		    count++;
-		    number = multiple * count;
-		    //System.out.println(number);
+			count++;
+			number = multiple * count;
+			if (number > 1000) {
+				break;
+			}
+			System.out.println(count + " : " + number);
 		}
 		String countMessage = multiple + "の倍数は" + count + "個あります";
 		System.out.println(countMessage);
-		
+
 		//問題2
 		float money = 1000000;
 		float target = 2000000;
@@ -101,7 +120,6 @@ public class ItemRepeat {
 		}
 		String message = year + "年後に" + money + "円になります。";
 		System.out.println(message);
-	    
-	}
 
+	}
 }
