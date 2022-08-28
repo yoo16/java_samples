@@ -1,7 +1,8 @@
-package shop.item;
+package cafe;
 
 public enum Size {
-	LARGE("L"), MEDIUM("M"), SMALL("S");
+//	LARGE, MEDIUM, SMALL
+	LARGE("大"), MEDIUM("中"), SMALL("小");
 
 	private final String value;
 
@@ -12,4 +13,5 @@ public enum Size {
 	public String getValue() {
 		return this.value;
 	}
+
 }

@@ -1,8 +1,10 @@
 package character;
 
+import item.Item;
+import item.ItemType;
 import monster.Monster;
 
-public class Character {
+public class Character implements ICharacter {
 
 	public String name;
 	public String job;
@@ -12,6 +14,9 @@ public class Character {
     public int exp;
 	public int attackPower;
 	public int defencePower;
+	public Item weapon;
+	public Item armor;
+	public Item shield;
 	
 	public Character(String name) {
 		super();
@@ -42,14 +47,39 @@ public class Character {
 		if (damage > 0) monster.hp -= damage;
 	}
 
-	public void magic(Monster monster, int magicType) {
-		if (mp < 0) System.out.println("MPがたりない！");
-		int damage = this.attackPower - monster.defencePower;
-		if (damage > 0) monster.hp -= damage;
-	}
-
 	public boolean isAlive() {
 		return (this.hp < 0);
+	}
+
+	@Override
+	public void magic(Monster monster, MagicType magicType) {
+		if (mp < 0) System.out.println("MPがたりない！");
+
+		MagicList magicList = new MagicList();
+		Magic magic = magicList.get(magicType);
+
+		if (magic.type == MagicType.ATTACK) {
+			int damage = this.attackPower + magic.power - monster.defencePower;
+			if (damage > 0) monster.hp -= damage;
+		} else if (magic.type == MagicType.DEFENCE) {
+			this.defencePower += magic.power;
+		} else if (magic.type == MagicType.HEAL) {
+			this.hp += magic.power;
+		}
+	}
+
+	@Override
+	public void equip(Item item) {
+		if (item.type == ItemType.WEAPON) {
+			this.weapon = item;
+			this.attackPower += item.attackPower;
+		} else if (item.type == ItemType.ARMOR) {
+			this.armor = item;
+			this.defencePower += item.defencePower;
+		} else if (item.type == ItemType.SHIELD) {
+			this.shield = item;
+			this.defencePower += item.defencePower;
+		}
 	}
 
 }

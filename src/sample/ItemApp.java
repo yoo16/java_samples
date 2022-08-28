@@ -1,6 +1,6 @@
 package sample;
 
-public class Item {
+public class ItemApp {
 
 	public static void main(String[] args) {
 		String itemName;
