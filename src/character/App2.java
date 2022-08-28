@@ -6,11 +6,6 @@ import java.util.Arrays;
 public class App2 {
 
 	public static void main(String[] args) {
-//		List<Character> characterList = Arrays.asList(
-//				new Wizard("アリス"),
-//				new Wizard("テリー"),
-//				new Warrior("ボブ"));
-
 		ArrayList<Character> characterList = new ArrayList<Character>(
 				Arrays.asList(
 						new Wizard("アリス"),

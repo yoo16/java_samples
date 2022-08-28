@@ -42,30 +42,39 @@ public class Character implements ICharacter {
 		System.out.println("--------");
 	}
 	
+	@Override
 	public void attack(Monster monster) {
 		int damage = this.attackPower - monster.defencePower;
 		if (damage > 0) monster.hp -= damage;
 	}
 
-	public boolean isAlive() {
-		return (this.hp < 0);
-	}
-
 	@Override
-	public void magic(Monster monster, MagicType magicType) {
+	public void attackMagic(Monster monster, Magic magic) {
 		if (mp < 0) System.out.println("MPがたりない！");
-
-		MagicList magicList = new MagicList();
-		Magic magic = magicList.get(magicType);
-
+		System.out.println(magic.name + "を唱えた！");
 		if (magic.type == MagicType.ATTACK) {
 			int damage = this.attackPower + magic.power - monster.defencePower;
 			if (damage > 0) monster.hp -= damage;
-		} else if (magic.type == MagicType.DEFENCE) {
+			System.out.println(monster.name + "に" + magic.power + "のダメージ！");
+		}
+	}
+
+	@Override
+	public void defenceMagic(Magic magic) {
+		if (mp < 0) System.out.println("MPがたりない！");
+		System.out.println(magic.name + "を唱えた！");
+		if (magic.type == MagicType.DEFENCE) {
 			this.defencePower += magic.power;
+			System.out.println(this.name + "の防御力が" + magic.power + "あがった！");
 		} else if (magic.type == MagicType.HEAL) {
 			this.hp += magic.power;
+			System.out.println(this.name + "のHPが" + magic.power + "回復！");
 		}
+	}
+	
+	@Override
+	public boolean isAlive() {
+		return (this.hp < 0);
 	}
 
 	@Override

@@ -2,7 +2,6 @@ package item;
 
 public class Item {
 
-
 	public String name;
 	public ItemType type;
 	public int attackPower;
