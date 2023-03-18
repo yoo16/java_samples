@@ -151,7 +151,7 @@ public class ItemCalculate {
 		System.out.println("問題3");
 		String character_name = "Tokyo";
 		String monster_name = "スライム";
-		int character_hp = 20;
+		// int character_hp = 20;
 		int monster_hp = 5;
 		int damage = 10;
 		String battle_message = character_name + "のこうげき！";

@@ -9,6 +9,8 @@ public class App4 {
 		Character character = new Character("チャーリー");
 		Wizard wizard = new Wizard("アリス");
 
+		System.out.println(character.name);
+		System.out.println(wizard.name);
 	}
 
 }
