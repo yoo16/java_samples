@@ -2,9 +2,10 @@ package sample;
 
 import java.util.Calendar;
 
-public class ItemCondition {
+public class Condition {
 
 	public static void main(String[] args) {
+		
 		float distance = 3.0f;
 		String moveingMethod;
 		boolean isRain = false;

@@ -4,6 +4,8 @@ import java.util.Random;
 
 public class ItemRepeat {
 	public static void main(String[] args) {
+
+
 		//for
 		for (int i = 0; i <= 10; i++) {
 			System.out.println(i);
@@ -22,6 +24,10 @@ public class ItemRepeat {
 		for (int i = 0; i < drinks.length; i++) {
 			String drink = drinks[i];
 			System.out.println(drink);
+		}
+
+		for (String drink : drinks) {
+			System.out.println(drink);	
 		}
 
 		//問題1
