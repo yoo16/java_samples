@@ -2,7 +2,7 @@ package sns.entity;
 
 import java.io.Serializable;
 
-public class UserBean implements Serializable {
+public class User implements Serializable {
 	
 	public String email;
 	//	private String email;
