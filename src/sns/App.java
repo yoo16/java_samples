@@ -1,11 +1,11 @@
 package sns;
 
-import sns.entity.UserBean;
+import sns.entity.User;
 
 public class App {
 
 	public static void main(String[] args) {
-		UserBean user = new UserBean();
+		User user = new User();
 //        user.name = "東京　太郎";
         user.email = "test@example.com";
 //        user.password = "pass12345";
