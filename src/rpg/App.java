@@ -1,24 +1,42 @@
 package rpg;
 
+import rpg.monster.Monster;
+import rpg.character.*;
+import rpg.character.Character;
+
 public class App {
 
 	public static void main(String[] args) {
-		Character wizard = new Character("アリス", "wizard");
+		Wizard wizard = new Wizard("アリス");
+		wizard.greet("こんにちは");
 
-		System.out.println(wizard.name);
-		System.out.println(wizard.job);
-		System.out.println(wizard.hp);
-		System.out.println(wizard.level);
-		
-		wizard.walk("left");
-		
-		Character warrior = new Character("ボブ",  "warrior");
+		Warrior warrior = new Warrior("ボブ");
+		warrior.greet("どーも");
+		warrior.showStatus();
 
-		wizard.talk(warrior, "勝負しましょう！");
-		
-		System.out.println(warrior.hp);
-		wizard.attack(warrior);
-		System.out.println(warrior.hp);
+		Monster monster = new Monster();
+		//		wizard.attack(monster);
+		warrior.attack(monster);
+
+		System.out.println(monster.hp);
+		System.out.println(monster.isAlive());
+
+		Wizard wizard1 = new Wizard("アリス");
+		Wizard wizard2 = new Wizard("テリー");
+		Warrior warrior1 = new Warrior("ボブ");
+
+		Character[] characters = { wizard1, wizard2, warrior1 };
+		System.out.println(characters);
+
+		System.out.println("--- Battle ---");
+		Monster monster1 = new Monster();
+
+		for (Character character : characters) {
+			System.out.println(character.getName() + "の攻撃");
+			character.attack(monster1);
+			System.out.println(monster1.isAlive());
+		}
+
 	}
 
 }

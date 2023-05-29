@@ -1,4 +1,4 @@
-package item;
+package rpg.item;
 
 public enum ItemType {
     WEAPON, 

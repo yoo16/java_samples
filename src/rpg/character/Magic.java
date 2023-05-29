@@ -1,4 +1,4 @@
-package character;
+package rpg.character;
 
 public class Magic {
 

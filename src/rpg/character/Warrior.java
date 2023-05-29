@@ -1,18 +1,17 @@
-package character;
+package rpg.character;
 
 import java.util.Random;
-
-import monster.Monster;
+import rpg.monster.Monster;
 
 public class Warrior extends Character {
 
 	public Warrior(String name) {
 		super(name);
-		this.job = "warrior";
-		this.hp = 30;
-		this.mp = 0;
-		this.attackPower = 10;
-		this.defencePower = 5;
+		this.setJob("warrior");
+		this.setHp(30);
+		this.setMp(0);
+		this.setAttackPower(10);
+		this.setDefencePower(5);
 	}
 
 	@Override
@@ -20,16 +19,16 @@ public class Warrior extends Character {
 		System.out.println("オーバーライド");
 		
 		//元の攻撃力をキャッシュ
-		int attackPower = this.attackPower;
+		int attackPower = this.getAttackPower();
 
 		// 1/5の確率で攻撃力を倍にする
 		Random rand = new Random();
-		if (rand.nextInt(5) == 0) this.attackPower = attackPower * 2;
+		if (rand.nextInt(5) == 0) this.setAttackPower(attackPower * 2);
 
 		// スーパークラスのattack() を実行
 		super.attack(monster);
 
 		// 攻撃力を元に戻す
-		this.attackPower = attackPower;
+		this.setAttackPower(attackPower);
 	}
 }

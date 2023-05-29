@@ -1,6 +1,8 @@
-package character;
+package rpg;
 
-import monster.Monster;
+import rpg.monster.Monster;
+import rpg.character.*;
+import rpg.character.Character;
 
 public class AppMagic {
 

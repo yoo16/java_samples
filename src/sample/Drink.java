@@ -1,4 +1,4 @@
-package item;
+package sample;
 
 import java.util.Arrays;
 import java.util.Random;
@@ -28,10 +28,9 @@ public class Drink {
 		System.out.println(numbers[1]);
 		System.out.println(numbers[2]);
 
-		//コンパイルエラー
-//		numbers[3] = 20;
-//		System.out.println(numbers[3]);
-
+		// コンパイルエラー
+		// numbers[3] = 20;
+		// System.out.println(numbers[3]);
 
 		// 問題1
 		int[] prices = { 350, 400, 300 };
@@ -39,9 +38,9 @@ public class Drink {
 
 		// 問題2
 		System.out.println(prices[1]);
-		
+
 		// 問題3
-		String hands[] = {"グー", "チョキ", "パー"};
+		String hands[] = { "グー", "チョキ", "パー" };
 		Random rand = new Random();
 		int handIndex = rand.nextInt(3);
 		String hand = hands[handIndex];

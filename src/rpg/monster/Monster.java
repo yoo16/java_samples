@@ -1,6 +1,6 @@
-package monster;
+package rpg.monster;
 
-import character.Character;
+import rpg.character.Character;
 
 public class Monster {
 
@@ -21,8 +21,10 @@ public class Monster {
 	}
 
 	public void attack(Character character) {
-		int damage = this.attackPower - character.defencePower;
-		if (damage > 0) character.hp -= damage;
+		int damage = this.attackPower - character.getDefencePower();
+		if (damage > 0) {
+			character.setHp(character.getHp() - damage);
+		}
 	}
 
 	public boolean isAlive() {

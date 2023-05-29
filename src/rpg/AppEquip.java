@@ -1,7 +1,9 @@
-package character;
+package rpg;
 
-import item.Item;
-import item.ItemList;
+import rpg.item.Item;
+import rpg.item.ItemList;
+import rpg.character.*;
+import rpg.character.Character;
 
 public class AppEquip {
 
@@ -15,19 +17,19 @@ public class AppEquip {
 		
 		Wizard wizard = new Wizard("チャーリー");
 		System.out.println("--- 装備前 ---");
-		System.out.println(wizard.attackPower);
-		System.out.println(wizard.defencePower);
+		System.out.println(wizard.getAttackPower());
+		System.out.println(wizard.getDefencePower());
 
 		wizard.equip(weapon);
 		wizard.equip(armor);
 		wizard.equip(shield);
 		System.out.println("--- 装備 ---");
-		System.out.println(wizard.weapon.name);
-		System.out.println(wizard.armor.name);
-		System.out.println(wizard.shield.name);
+		System.out.println(wizard.getWeapon().getName());
+		System.out.println(wizard.getArmor().getName());
+		System.out.println(wizard.getShield().getName());
 		System.out.println("--- 装備後 ---");
-		System.out.println(wizard.attackPower);
-		System.out.println(wizard.defencePower);
+		System.out.println(wizard.getAttackPower());
+		System.out.println(wizard.getDefencePower());
 
 	}
 }

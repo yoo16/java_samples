@@ -1,4 +1,7 @@
-package character;
+package rpg;
+
+import rpg.character.*;
+import rpg.character.Character;
 
 public class App4 {
 
@@ -9,8 +12,8 @@ public class App4 {
 		Character character = new Character("チャーリー");
 		Wizard wizard = new Wizard("アリス");
 
-		System.out.println(character.name);
-		System.out.println(wizard.name);
+		System.out.println(character.getName());
+		System.out.println(wizard.getName());
 	}
 
 }

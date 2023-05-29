@@ -1,7 +1,9 @@
-package character;
+package rpg;
 
 import java.util.HashMap;
 import java.util.Map;
+import rpg.character.*;
+import rpg.character.Character;
 
 public class App3 {
 
@@ -16,7 +18,7 @@ public class App3 {
 		}
 
 		for (Character character :characterMap.values()) {
-			System.out.println(character.name);
+			System.out.println(character.getName());
 		}
 	}
 
